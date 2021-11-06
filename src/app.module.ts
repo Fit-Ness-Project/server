@@ -13,16 +13,16 @@ import { PostsModule } from './posts/posts.module';
 import { BlogsModule } from './blogs/blogs.module';
 import { GoogleStrategy } from './google.strategy';
 
-
+// const PORT =  process.env.port
 
 @Module({
   imports: [ TypeOrmModule.forRoot({
     "type": "mysql",
-    "host": "localhost",
-    "port": 3306,
-    "username": "slim",
-    "password": "Whenimgoneeminem12345",
-    "database": "fithub-database",
+    "host": process.env.host,
+    "port": 3306  ,
+    "username":  process.env.username,
+    "password":  process.env.password,
+    "database":  process.env.database,
     "entities": ["dist/**/*.entity{.ts,.js}"],
     "synchronize": true
   }), UsersModule, GymsModule, EventsModule, CoachsModule, RestaurantsModule, RecipesModule, AdminModule, PostsModule, BlogsModule,],
