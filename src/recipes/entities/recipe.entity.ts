@@ -21,7 +21,9 @@ export class Recipe {
 
     @Column()
     comments: string 
-
+ 
+    @Column()
+    imageUrl: string 
 
 
 }

@@ -6,5 +6,6 @@ export class CreateRecipeDto {
         user_id: Number 
         likes: Number
         comments: string 
+        imageUrl : string
     }
     
