@@ -14,7 +14,6 @@ import { BlogsModule } from './blogs/blogs.module';
 import { GoogleStrategy } from './google.strategy';
 import { ConfigModule } from '@nestjs/config';
 
-// const PORT =  process.env.port
 
 @Module({
   imports: [ConfigModule.forRoot(),
