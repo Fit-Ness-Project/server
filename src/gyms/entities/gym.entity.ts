@@ -35,5 +35,10 @@ export class Gym {
    @Column()
    longitude :  string;
 
+   @Column()
+   adress :  string;
+
+   @Column()
+   phoneNumber :  Number ;
 
 }

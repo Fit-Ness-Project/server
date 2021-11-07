@@ -12,20 +12,24 @@ import { AdminModule } from './admin/admin.module';
 import { PostsModule } from './posts/posts.module';
 import { BlogsModule } from './blogs/blogs.module';
 import { GoogleStrategy } from './google.strategy';
+import { ConfigModule } from '@nestjs/config';
 
-// const PORT =  process.env.port
 
 @Module({
-  imports: [ TypeOrmModule.forRoot({
-    "type": "mysql",
-    "host": process.env.host,
-    "port": 3306  ,
-    "username":  process.env.username,
-    "password":  process.env.password,
-    "database":  process.env.database,
-    "entities": ["dist/**/*.entity{.ts,.js}"],
-    "synchronize": true
-  }), UsersModule, GymsModule, EventsModule, CoachsModule, RestaurantsModule, RecipesModule, AdminModule, PostsModule, BlogsModule,],
+  imports: [ConfigModule.forRoot(),
+    TypeOrmModule.forRootAsync({
+      useFactory: () => ({
+        type: 'mysql',
+        host: process.env.DB_HOST,
+        port: parseInt(process.env.DB_PORT) || 3306,
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        synchronize: false
+    
+      })   }) ,
+     UsersModule, GymsModule, EventsModule, CoachsModule, RestaurantsModule, RecipesModule, AdminModule, PostsModule, BlogsModule],
   controllers: [AppController],
   providers: [AppService, GoogleStrategy],
 })

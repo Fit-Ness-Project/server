@@ -15,4 +15,6 @@ export class UpdateGymDto extends PartialType(CreateGymDto) {
    isAvailable: boolean;
    latitude :  string;
    longitude :  string;
+   adress: string;
+   phoneNumber: Number;
 }
