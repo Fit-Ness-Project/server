@@ -1,14 +1,15 @@
+/* eslint-disable prettier/prettier */
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateEventDto } from './create-event.dto';
 
 export class UpdateEventDto extends PartialType(CreateEventDto) {
-    id: Number;
+    id: number;
     eventName: string; 
-    user_id: Number; 
+    user_id: number; 
     adress: string;
     description: string;
     date: Date;  
     created_by : string;   
     created_at : Date; 
-    created_by_id : Number
+    created_by_id : number
 }
