@@ -1,10 +1,11 @@
+/* eslint-disable prettier/prettier */
 export class CreateRecipeDto {
-        id: Number;
+        id: number;
         RecipeTitle: string 
         created_at: Date
         content: string 
-        user_id: Number 
-        likes: Number
+        user_id: number 
+        likes: number
         comments: string 
         imageUrl : string
     }

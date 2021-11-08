@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -5,13 +6,13 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 export class Event {
 
     @PrimaryGeneratedColumn()
-    id: Number;
+    id: number;
 
     @Column()
     eventName: string; 
 
     @Column()
-    user_id: Number; 
+    user_id: number; 
 
     @Column()
     adress: string;
@@ -29,7 +30,10 @@ export class Event {
     created_at : Date; 
 
     @Column()
-    created_by_id : Number; 
+    created_by_id : number;
+
+    @Column()
+    imageurl : string; 
 
 
 }
